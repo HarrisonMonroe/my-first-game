@@ -1,0 +1,21 @@
+{
+  "name": "harrisons-video-game",
+  "version": "0.1.0",
+  "description": "Click Bowser to win",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server"
+  },
+  "keywords": [
+    "video-game"
+  ],
+  "author": "Harrison and Dada",
+  "license": "MIT",
+  "dependencies": {
+    "zcanvas": "^5.1.4"
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
+}
