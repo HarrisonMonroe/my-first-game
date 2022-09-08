@@ -4,13 +4,13 @@
   "description": "My first game! Click Bowser to win using Puck.js!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "live-server"
+    "start": "live-server --port=8000 --host=127.0.0.1 --open=dist",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "video-game"
   ],
-  "author": "Harrison and Dada",
+  "author": "Harrison and Dad",
   "license": "MIT",
   "dependencies": {
     "zcanvas": "^5.1.4"
