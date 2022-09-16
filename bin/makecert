@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+'use strict';
+var devcert = require('devcert');
+var fs = require('fs');
+var noticeMessage = function(){
+  console.log('The operating system needs your password to authorize the certificate authority.');
+  console.log('Details: https://github.com/davewasmer/devcert');
+};
+var notice = function(){
+  const key = __dirname + '/certs/tls.key';
+  try {
+    if (!fs.existsSync(key)) {
+      noticeMessage();
+    }
+  } catch(err) {
+    noticeMessage();
+  }
+};
+(async () => {
+    // const asyncMsg = Promise.resolve('hello world');
+    var cert = await devcert.certificateFor('my.game')
+      .then(({key, cert}) => {
+        fs.writeFileSync(__dirname + '/certs/tls.key', key);
+        fs.writeFileSync(__dirname + '/certs/tls.cert', cert);
+      })
+      .catch(console.error);
+  })();

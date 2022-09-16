@@ -4,8 +4,9 @@
   "description": "My first game! Click Bowser to win using Puck.js!",
   "main": "index.js",
   "scripts": {
-    "start": "live-server --port=8000 --host=127.0.0.1 --open=dist",
-    "deploy": "gh-pages -d dist"
+    "makecert": "bin/makecert",
+    "start": "http-server -a my.game -S -K bin/certs/tls.key -C bin/certs/tls.cert",
+    "deploy": "gh-pages -d public"
   },
   "keywords": [
     "video-game"
@@ -13,9 +14,11 @@
   "author": "Harrison and Dad",
   "license": "MIT",
   "dependencies": {
+    "http-server": "^14.1.1",
     "zcanvas": "^5.1.4"
   },
   "devDependencies": {
+    "devcert": "^1.2.2",
     "gh-pages": "^4.0.0"
   }
 }
